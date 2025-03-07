@@ -1,0 +1,10 @@
+Liste des membres de l’équipe et leurs responsabilités :
+   Yosr Ben Amor : boutique et detail boutique
+   Meryem Boukraa :  liste des trajets et conversation
+   Chiheb Dabebi : Assistance vocale et filtrage des conducteurs
+   Oussama Awled Salem : Page d'acceuil et tag prédefinies
+   Louay Abidi : Ajouter un avis et liste des trajets d'un conducteur
+
+Instructions pour exécuter le projet :
+   npm install 
+   npm run build

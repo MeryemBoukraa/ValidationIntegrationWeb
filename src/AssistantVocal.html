@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assistant Vocale</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Young+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body class="bg-[#CCDBEB] text-white font-sans flex flex-col min-h-screen">
+    <nav class="bg-gradient-to-r from-[#007BFF] via-[#0062CA] to-[#004A99] p-4 flex items-center justify-between h-16">
+        <img src="../public/logo.png" alt="Logo" class="w-24 h-24 object-contain">
+
+        <ul id="menu" class="hidden md:flex space-x-6 w-full justify-center font-serif">
+            <li><a href="accueil.html" class="hover:underline">Page d’accueil</a></li>
+            <li><a href="liste de trajets.html" class="hover:underline">Listes des trajets</a></li>
+            <li><a href="conversation.html" class="hover:underline">Conversation</a></li>
+            <li class="text-orange-400"><a href="AssistantVocal.html" class="hover:underline">Assistant vocale</a></li>
+            <li><a href="boutique.html" class="hover:underline">Boutique</a></li>
+        </ul>
+
+        <div class="flex items-center space-x-4">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                 alt="Profile"
+                 class="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-white">
+
+            <button id="menu-button" class="md:hidden text-white text-2xl">
+                ☰
+            </button>
+        </div>
+    </nav>
+
+    <ul id="mobile-menu" class="hidden flex flex-col items-center space-y-4 bg-[#004A99] text-white py-4 absolute w-full left-0 top-16 font-serif">
+        <li><a href="accueil.html" class="hover:underline">Page d’accueil</a></li>
+        <li><a href="liste de trajets.html" class="hover:underline">Listes des trajets</a></li>
+        <li><a href="conversation.html" class="hover:underline">Conversation</a></li>
+        <li class="text-orange-400"><a href="AssistantVocal.html" class="hover:underline">Assistant vocale</a></li>
+        <li><a href="boutique.html" class="hover:underline">Boutique</a></li>
+    </ul>
+
+    <script>
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', function () {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        window.addEventListener('resize', function () {
+            if (window.innerWidth >= 768) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
+
+    <main class="container mx-auto px-4 py-8 flex-grow flex items-center justify-center">
+        <div class="bg-white rounded-2xl shadow-lg p-6 w-full max-w-4xl h-[600px] flex flex-col justify-between">
+            <div class="space-y-4 overflow-y-auto flex-1">
+                <div class="flex items-start">
+                    <i class="bi bi-robot text-orange-500 text-2xl mr-2"></i>
+                    <div class="bg-gray-200 px-4 py-2 rounded-lg text-gray-700 max-w-[70%]">
+                        Bonjour Foulen, comment puis-je vous aider aujourd'hui ?
+                    </div>
+                </div>
+
+                <div class="flex items-start justify-end">
+                    <div class="bg-gray-200 px-4 py-2 rounded-lg text-gray-700 max-w-[70%]">
+                        Donnez-moi la liste des conducteurs filtrée par la disponibilité.
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                         alt="User"
+                         class="w-8 h-8 rounded-full ml-2">
+                </div>
+
+                <div class="flex items-start">
+                    <i class="bi bi-robot text-orange-500 text-2xl mr-2"></i>
+                    <div class="bg-gray-200 px-4 py-2 rounded-lg text-gray-700 max-w-[70%]">
+                        <a href="filtrageConducteurs.html" class="hover:underline text-blue-500">
+                            Voici la liste des conducteurs disponibles...
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-between items-center mt-4 p-4 border-t border-gray-300">
+                <button class="text-orange-500 text-2xl hover:text-orange-600 transition-colors">
+                    🎤
+                </button>
+
+                <button class="text-orange-500 text-2xl hover:text-orange-600 transition-colors">
+                    ⌨️
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gradient-to-r from-[#0A61BE] via-[#0251A5] to-[#007BFF] py-6 px-4 sm:px-10 flex flex-col sm:flex-row justify-between items-center text-white font-serif mt-auto">
+        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-10 text-center sm:text-left">
+            <div class="flex items-center justify-center sm:justify-start space-x-2">
+                <i class="bi bi-telephone-fill text-xl"></i>
+                <p>+216 75 366 499</p>
+            </div>
+            <div class="flex items-center justify-center sm:justify-start space-x-2">
+                <i class="bi bi-envelope-fill text-xl"></i>
+                <p>Covoi@gmail.com</p>
+            </div>
+            <div class="flex items-center justify-center sm:justify-start space-x-2">
+                <i class="bi bi-geo-alt-fill text-xl"></i>
+                <p>Tunis, Tunisie</p>
+            </div>
+        </div>
+
+        <div class="mt-4 sm:mt-0">
+            <img src="../public/logo1.png" alt="Footer Logo" class="w-24 sm:w-48 h-auto">
+        </div>
+    </footer>
+</body>
+</html>

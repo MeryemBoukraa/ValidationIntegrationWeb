@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Young+Serif&display=swap" rel="stylesheet">
+
+    <!-- Add Font Awesome CDN here for the stars -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <style>
+        .font-title { font-family: 'Young Serif', serif; }
+        .font-body { font-family: 'Roboto', sans-serif; }
+        .gradient-header {
+            background: linear-gradient(to right, #007BFF, #0062CA 26%, #004A99 50%);
+        }
+        .gradient-footer {
+            background: linear-gradient(to right, #0A61BE , #0251A5 26%, #007BFF 50%);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 1060px; /* Adjust according to your needs */
+            height: 240px; /* Adjust according to your needs */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .product-image {
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        /* Ensure the main content pushes footer to bottom if content is small */
+        main {
+            min-height: 80vh; /* Adjust this value for larger or smaller content areas */
+        }
+    </style>
+</head>
+<body class="bg-[#CCDBEB] text-white font-body">
+    
+   <!-- Navbar -->
+<nav class="gradient-header p-4 flex items-center justify-between h-16">
+    <!-- Logo -->
+    <img src="../public/logo.png" alt="Logo" class="w-24 h-24 object-contain">
+
+    <!-- Menu Desktop -->
+    <ul id="menu" class="hidden md:flex space-x-6 w-full justify-center">
+        <li><a href="accueil.html" class="hover:underline">Page d’accueil</a></li>
+        <li class="text-orange-400"><a href="liste de trajets.html" class="hover:underline">Listes des trajets</a></li>
+        <li><a href="conversation.html" class="hover:underline">Conversation</a></li>
+        <li><a href="AssistantVocal.html" class="hover:underline">Assistant vocale</a></li>
+        <li ><a href="boutique.html" class="hover:underline">Boutique</a></li>
+    </ul>
+
+    <!-- Profil + Menu Mobile -->
+    <div class="flex items-center space-x-4">
+        <!-- Icône de Profil -->
+        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+             alt="Profile"
+             class="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-white">
+
+        <!-- Bouton Menu Mobile (☰) -->
+        <button id="menu-button" class="md:hidden text-white text-2xl">
+            ☰
+        </button>
+    </div>
+</nav>
+
+<!-- Menu Mobile -->
+<ul id="mobile-menu" class="hidden flex flex-col items-center space-y-4 bg-[#004A99] text-white py-4 absolute w-full left-0 top-16">
+    <li><a href="accueil.html" class="hover:underline">Page d’accueil</a></li>
+    <li class="text-orange-400"><a href="liste de trajets.html" class="hover:underline">Listes des trajets</a></li>
+    <li><a href="conversation.html" class="hover:underline">Conversation</a></li>
+    <li><a href="AssistantVocal.html" class="hover:underline">Assistant vocale</a></li>
+    <li><a href="boutique.html" class="hover:underline">Boutique</a></li>
+</ul>
+
+<!-- Script pour gérer l'affichage du menu mobile -->
+<script>
+    const menuButton = document.getElementById('menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuButton.addEventListener('click', function () {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Fermer le menu mobile si l'écran devient grand
+    window.addEventListener('resize', function () {
+        if (window.innerWidth >= 768) { // Dès que l'écran est grand
+            mobileMenu.classList.add('hidden'); // Cacher le menu mobile
+        }
+    });
+</script>
+
+    <!-- Main Content -->
+    <main class="container mx-auto mt-10">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h2 class="text-black">De Tunis à Zaghouan :</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <div class="mb-4">
+                        <p class="text-black">Ponctualité</p>
+                        <div class="text-yellow-500">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-black">Conduite</p>
+                        <div class="text-yellow-500">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-black">Propreté</p>
+                        <div class="text-yellow-500">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-black">Communication</p>
+                        <div class="text-yellow-500">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <textarea class="w-full h-32 p-4 border rounded-lg" placeholder="Dite quelque chose ici ..."></textarea>
+                    <button class="mt-4 bg-orange-500 text-white py-2 px-6 rounded-lg hover:bg-orange-600">Envoyer</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+   <!-- Footer -->
+ <!-- Footer -->
+ <footer class="bg-gradient-to-r from-[#0A61BE] via-[#0251A5] to-[#007BFF] py-6 px-4 sm:px-10 flex flex-col sm:flex-row justify-between items-center text-white font-serif mt-auto">
+    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-10 text-center sm:text-left">
+        <div class="flex items-center justify-center sm:justify-start space-x-2">
+            <i class="bi bi-telephone-fill text-xl"></i>
+            <p>+216 75 366 499</p>
+        </div>
+        <div class="flex items-center justify-center sm:justify-start space-x-2">
+            <i class="bi bi-envelope-fill text-xl"></i>
+            <p>Covoi@gmail.com</p>
+        </div>
+        <div class="flex items-center justify-center sm:justify-start space-x-2">
+            <i class="bi bi-geo-alt-fill text-xl"></i>
+            <p>Tunis, Tunisie</p>
+        </div>
+    </div>
+
+    <div class="mt-4 sm:mt-0">
+        <img src="../public/logo1.png" alt="Footer Logo" class="w-24 sm:w-48 h-auto">
+    </div>
+</footer>
+</body>
+</html>
