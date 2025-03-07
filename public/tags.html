@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Young+Serif&display=swap" rel="stylesheet">
+</head>
+<body class="bg-[#CCDBEB] text-white font-sans flex flex-col min-h-screen">
+    <nav class="bg-gradient-to-r from-[#007BFF] via-[#0062CA] to-[#004A99] p-4 flex items-center justify-between h-16">
+        <img src="logo.png" alt="Logo" class="w-24 h-24 object-contain">
+
+        <ul id="menu" class="hidden md:flex space-x-6 w-full justify-center font-serif">
+            <li><a href="index.html" class="hover:underline">Page d’accueil</a></li>
+            <li><a href="liste de trajets.html" class="hover:underline">Listes des trajets</a></li>
+            <li class="text-orange-400"><a href="conversation.html" class="hover:underline">Conversation</a></li>
+            <li><a href="AssistantVocal.html" class="hover:underline">Assistant vocale</a></li>
+            <li><a href="boutique.html" class="hover:underline">Boutique</a></li>
+        </ul>
+
+        <div class="flex items-center space-x-4">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                 alt="Profile"
+                 class="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-white">
+
+            <button id="menu-button" class="md:hidden text-white text-2xl">
+                ☰
+            </button>
+        </div>
+    </nav>
+
+    <ul id="mobile-menu" class="hidden flex flex-col items-center space-y-4 bg-[#004A99] text-white py-4 absolute w-full left-0 top-16 font-serif">
+        <li><a href="index.html" class="hover:underline">Page d’accueil</a></li>
+        <li><a href="liste de trajets.html" class="hover:underline">Listes des trajets</a></li>
+        <li class="text-orange-400"><a href="conversation.html" class="hover:underline">Conversation</a></li>
+        <li><a href="AssistantVocal.html" class="hover:underline">Assistant vocale</a></li>
+        <li><a href="boutique.html" class="hover:underline">Boutique</a></li>
+    </ul>
+
+    <script>
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', function () {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        window.addEventListener('resize', function () {
+            if (window.innerWidth >= 768) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
+
+
+
+
+  <main class="flex flex-col items-center p-4 w-full">
+   <div class="bg-white w-full flex items-center border-b pb-2 mb-4">
+    <img alt="User profile picture" class="h-12 w-12 rounded-full" height="50" src="https://storage.googleapis.com/a1aa/image/nJcrNnlL6OHKn4RnicVokwXMvwsD7_hSTb4xLBlb9Dc.jpg" width="50"/>
+    <span class="ml-4 text-lg font-semibold">
+     Mohammed
+    </span>
+    
+    <div class="ml-auto flex space-x-4">
+        <i class="fas fa-phone-alt icon-style"></i>
+        <i class="fas fa-video text-black"></i>
+    </div>
+   </div>
+   <div class="flex flex-col space-y-2 mb-4 w-full px-4">
+    <div class="self-end bg-white text-black p-2 rounded-lg shadow-md">
+     Baggage possible ?
+    </div>
+    <div class="self-end bg-white text-black p-2 rounded-lg shadow-md">
+     Combien ?
+    </div>
+    <div class="self-end bg-white text-black p-2 rounded-lg shadow-md">
+     Le départ ?
+    </div>
+    <div class="self-end bg-white text-black p-2 rounded-lg shadow-md">
+     Le temps de départ ?
+    </div>
+   </div>
+   <div class="flex items-center border-t pt-2 w-full px-4">
+    <img alt="User profile picture" class="h-12 w-12 rounded-full mr-4" height="50" src="https://storage.googleapis.com/a1aa/image/nJcrNnlL6OHKn4RnicVokwXMvwsD7_hSTb4xLBlb9Dc.jpg" width="50"/>
+    <div class="relative flex-grow">
+     <input class="w-full p-2 border rounded-lg pl-10 pr-10" placeholder="Ecrivez une chose ..." type="text"/>
+     <i class="fas fa-microphone text-orange-500 absolute left-2 top-1/2 transform -translate-y-1/2"></i>
+     <i class="fas fa-smile text-blue-500 absolute right-2 top-1/2 transform -translate-y-1/2">
+      <i class="fas fa-plus text-xs absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2"></i>
+     </i>
+    </div>
+    <div class="flex items-center space-x-2 ml-2">
+     <i class="fas fa-thumbs-up text-blue-500"></i>
+     <i class="fas fa-map-marker-alt text-orange-500"></i>
+    </div>
+   </div>
+  </main>
+   <footer class="bg-gradient-to-r from-[#0A61BE] via-[#0251A5] to-[#007BFF] py-6 px-4 sm:px-10 flex flex-col sm:flex-row justify-between items-center text-white font-serif mt-auto">
+        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-10 text-center sm:text-left">
+            <div class="flex items-center justify-center sm:justify-start space-x-2">
+                <i class="bi bi-telephone-fill text-xl"></i>
+                <p>+216 75 366 499</p>
+            </div>
+            <div class="flex items-center justify-center sm:justify-start space-x-2">
+                <i class="bi bi-envelope-fill text-xl"></i>
+                <p>Covoi@gmail.com</p>
+            </div>
+            <div class="flex items-center justify-center sm:justify-start space-x-2">
+                <i class="bi bi-geo-alt-fill text-xl"></i>
+                <p>Tunis, Tunisie</p>
+            </div>
+        </div>
+
+        <div class="mt-4 sm:mt-0">
+            <img src="logo1.png" alt="Footer Logo" class="w-24 sm:w-48 h-auto">
+        </div>
+    </footer>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+</body>
+</html>
